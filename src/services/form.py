@@ -15,5 +15,5 @@ class FormService:
             }
             async with session.post(TELEGRAM_URL, data=data) as resp:
                 response = await resp.json()
-            if not response["ok"] and response["ok"] is not True:
+            if not response["ok"] or response["ok"] is not True:
                 raise HTTPException(status_code=400, detail="Sending form failed")
