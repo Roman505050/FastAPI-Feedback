@@ -1,10 +1,6 @@
 ![FastAPI icon](https://camo.githubusercontent.com/580b7032c938b3cbf4f2547383a8d43d86aba159622747f1993b0e45c04f0665/68747470733a2f2f666173746170692e7469616e676f6c6f2e636f6d2f696d672f6c6f676f2d6d617267696e2f6c6f676f2d7465616c2e706e67)
 
-<div style="text-align:center">
-
-# Sending Form - FastAPI Backend
-
-</div>
+#   Sending Form - FastAPI Backend
 
 This is a [FastAPI](https://fastapi.tiangolo.com/) project built using [FastAPI](https://github.com/tiangolo/fastapi), which provides fast development and high performance.
 
