@@ -6,7 +6,13 @@ from starlette.staticfiles import StaticFiles
 from starlette.status import HTTP_422_UNPROCESSABLE_ENTITY
 from fastapi.templating import Jinja2Templates
 
-app = FastAPI()
+from src.api.v1.form.router import router as form_router
+from src.config import settings
+
+app = FastAPI(
+    redoc_url=None if settings.production else "/redoc",
+    docs_url=None if settings.production else "/docs",
+)
 templates = Jinja2Templates("web")
 
 @app.get("/", include_in_schema=False)
@@ -22,4 +28,4 @@ async def request_validation_exception_handler(
         content={"detail": jsonable_encoder(exc.errors(), exclude={"url", "input"})})
 
 
-
+app.include_router(form_router, prefix="/api/v1/form", tags=["form"])
