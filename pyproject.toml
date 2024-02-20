@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "form-backend"
+version = "0.1.0"
+description = ""
+authors = ["Roman505050 <myhun59@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.109.2"
+aiohttp = "^3.9.3"
+jinja2 = "^3.1.3"
+uvicorn = "^0.27.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
