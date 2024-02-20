@@ -6,6 +6,8 @@ from starlette.staticfiles import StaticFiles
 from starlette.status import HTTP_422_UNPROCESSABLE_ENTITY
 from fastapi.templating import Jinja2Templates
 
+from src.api.v1.form.router import router as form_router
+
 app = FastAPI()
 templates = Jinja2Templates("web")
 
@@ -22,4 +24,4 @@ async def request_validation_exception_handler(
         content={"detail": jsonable_encoder(exc.errors(), exclude={"url", "input"})})
 
 
-
+app.include_router(form_router, prefix="/api/v1/form", tags=["form"])
