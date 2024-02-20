@@ -7,8 +7,12 @@ from starlette.status import HTTP_422_UNPROCESSABLE_ENTITY
 from fastapi.templating import Jinja2Templates
 
 from src.api.v1.form.router import router as form_router
+from src.config import settings
 
-app = FastAPI()
+app = FastAPI(
+    redoc_url=None if settings.production else "/redoc",
+    docs_url=None if settings.production else "/docs",
+)
 templates = Jinja2Templates("web")
 
 @app.get("/", include_in_schema=False)
