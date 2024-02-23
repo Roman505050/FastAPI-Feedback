@@ -14,6 +14,7 @@ app = FastAPI(
     docs_url=None if settings.production else "/docs",
 )
 templates = Jinja2Templates("web")
+app.mount("/static", StaticFiles(directory="web/static"), name="static")
 
 @app.get("/", include_in_schema=False)
 async def index(request: Request):

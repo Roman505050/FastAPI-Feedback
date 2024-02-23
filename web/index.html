@@ -3,64 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API Documentation</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-        .container {
-            text-align: center;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            color: #007bff;
-        }
-        p {
-            color: #555;
-            margin-bottom: 20px;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-        li {
-            margin-bottom: 15px;
-        }
-        a {
-            color: #007bff;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease-in-out;
-        }
-        a:hover {
-            color: #0056b3;
-        }
-    </style>
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+    <script src="static/js/main.js"></script>
+    <script src="static/js/validate.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>API Documentation</h1>
-        
-        <p>Explore the documentation using:</p>
-        
-        <ul>
-            <li><a href="https://site-form-backend.vercel.app/docs">Swagger UI</a></li>
-            <li><a href="https://site-form-backend.vercel.app/redoc">ReDoc</a></li>
-        </ul>
-        
-        <p>Powered by <a href="https://vercel.com" target="_blank">Vercel</a></p>
+    <main>
+        <header>
+            <h4>Feedback</h4>
+        </header>
+        <form>
+            <div class="form_wrapper">
+                <input type="text" id="name" minlength="2" maxlength="50" required>
+                <label for="name">Name</label>
+                <i class="material-icons">person</i>
+                <div class="error-message" id="name-error"></div>
+            </div>
+            <div class="form_wrapper">
+                <input type="email" id="email" minlength="3" maxlength="50" required>
+                <label for="email">Email</label>
+                <i class="material-icons">email</i>
+            </div>
+            <div class="form_wrapper">
+                <input type="phone" id="phone" minlength="12" maxlength="13" pattern="[0-9]+" required>
+                <label for="phone">Phone</label>
+                <i class="material-icons">phone</i>
+            </div>
+            <div class="form_wrapper">
+                <input type="text" id="message" minlength="10" maxlength="750" required>
+                <label for="message">Message</label>
+                <i class="material-icons">message</i>
+            </div>
+            <button type="submit">Send</button>
+        </form>
+    </main>
+    <div id="modal-success" class="modal-success">
+        <div class="modal-success-content">
+            <span class="close-success">&times;</span>
+            <p>Форма успішно відправлена!</p>
+        </div>
+    </div>
+    <div id="modal-error" class="modal-error">
+        <div class="modal-error-content">
+            <span class="close-error">&times;</span>
+            <p>Помилка відправлення форми!</p>
     </div>
 </body>
 </html>
