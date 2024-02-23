@@ -12,7 +12,7 @@ First, start the development server:
 uvicorn src.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
-Open [http://localhost:8000](http://localhost:3000) in your browser to view the result. There you will be able to see the main page of the site. P.s. links on the main page lead to the production server
+Open [http://localhost:8000](http://localhost:3000) in your browser to view the result. There you will be able to see the main page of the site.
 
 You can start editing the code in the project files. The server will automatically reboot when the changes are saved.
 
